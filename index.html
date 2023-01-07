@@ -11,72 +11,24 @@
 
         gtag('config', 'G-WRK7261DZ5');
         </script>
-        
-        <style type="text/css">
-            canvas {
-                    position: fixed;
-                    height: 100%;
-                    width: 100%;
-                    top: 0;
-                    left: 0;
-                    z-index: -1;
-                }
-            body {
-                font-family: 'Cairo Play', cursive;
-            }
-        </style>
+
+        <link rel="stylesheet" href="main.css">
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cairo+Play:wght@300;400;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h4 align="center">Press 'C' to clear<h3>
-
-        <div id="container"></div>
-        <script src="sketch.min.js"></script>
-        <script>
-
-        var COLOURS = [ '#E3EB64', '#A7EBCA', '#D8EBA7', '#D391FA' ];
-        var item = COLOURS[Math.floor(Math.random()*COLOURS.length)];
-        var radius = 0;
-
-        Sketch.create({
-
-            container: document.getElementById( 'container' ),
-            autoclear: false,
-            retina: 'auto',
-
-            setup: function() {
-                console.log( 'setup' );
-            },
-
-            update: function() {
-                radius = 2 + abs( sin( this.millis * 0.003 ) * 50 );
-            },
-
-            // Event handlers
-
-            keydown: function() {
-                if ( this.keys.C ) this.clear();
-            },
-
-            touchmove: function() {
-
-                for ( var i = this.touches.length - 1, touch; i >= 0; i-- ) {
-
-                    touch = this.touches[i];
-
-                    this.lineCap = 'round';
-                    this.lineJoin = 'round';
-                    this.fillStyle = this.strokeStyle = item;
-                    this.lineWidth = radius;
-
-                    this.beginPath();
-                    this.moveTo( touch.ox, touch.oy );
-                    this.lineTo( touch.x, touch.y );
-                    this.stroke();
-                }
-            }
-        });
+        <div id="header"></div>
         
-        </script>
+        <div id="body" align=center>
+            <h1 class="fk-drawing">Hey there, look At This <span class="underline--magical">Pretty</span> Underline</h1>
+            <h2 class="not-allow-drawover">Press 'C' to clear</h2>
+            <div id="container"></div>
+            <script src="sketch.min.js"></script>
+            <script src="main.js"></script>
+        </div>
+
+        <div id="footer">
+            <a href="https://github.com/Aditya-Gaur" target="_blank">Github</a>
+        </div>
+        
     </body>
 </html>
