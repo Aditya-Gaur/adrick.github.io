@@ -12,11 +12,6 @@ body {
   position: relative;
 }
 
-.fk-drawing {
-  z-index: 1;
-  position: relative;
-}
-
 .not-allow-drawover {
   pointer-events : none;
   z-index: 1;
@@ -24,6 +19,7 @@ body {
 }
 
 .underline--magical {
+  pointer-events: all;
   background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
