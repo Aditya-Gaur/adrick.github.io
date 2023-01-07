@@ -18,12 +18,9 @@ body {
 }
 
 .not-allow-drawover {
+  pointer-events : none;
   z-index: 1;
   position: relative;
-}
-
-.not-allow-drawover:hover{
-  z-index: 0;
 }
 
 .underline--magical {
